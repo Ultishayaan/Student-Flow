@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>StudentFlow — Primary · Web Dashboard (Teal / Orange Flat)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<style>
+  :root{
+    --primary:#0D9488; --secondary:#14B8A6; --accent:#EA580C;
+    --bg:#F0FDFA; --fg:#134E4A; --card:#FFFFFF; --muted:#E8F1F4;
+    --muted-fg:#475569; --border:#99F6E4; --destructive:#DC2626;
+  }
+  *{ font-family:'Plus Jakarta Sans', system-ui, sans-serif; }
+  /* Flat design: no gradients, no shadows — borders + solid color only */
+  .flat-card{ background:var(--card); border:1px solid var(--border); }
+  .scroll::-webkit-scrollbar{ width:0; height:0; } .scroll{ scrollbar-width:none; }
+  .label-chip{ font-size:11px; }
+  @media (prefers-reduced-motion: reduce){ *{ transition:none !important; } }
+</style>
+</head>
+<body class="min-h-screen p-8" style="background:
+    radial-gradient(circle at 12% 8%, #ccfbf1 0%, transparent 40%),
+    radial-gradient(circle at 88% 92%, #fed7aa 0%, transparent 45%),
+    #f8fafc;">
+
+  <!-- Header -->
+  <header class="max-w-7xl mx-auto mb-8 text-center">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-teal-600/10 border border-teal-500/20 mb-3">
+      <span class="w-2 h-2 rounded-full bg-teal-500"></span>
+      <span class="text-teal-700 text-xs font-semibold tracking-wide uppercase">Primary Direction · Web Dashboard</span>
+    </div>
+    <h1 class="text-4xl font-extrabold text-slate-800">StudentFlow — Web</h1>
+    <p class="text-slate-500 mt-2 max-w-xl mx-auto">Current primary direction: Flat design, teal + orange, Plus Jakarta Sans. Mobile screens are in <code class="font-mono text-xs">design/ui-screens.html</code>; this file adds the matching web dashboard.</p>
+  </header>
+
+  <!-- Browser frame -->
+  <main class="max-w-7xl mx-auto">
+    <div class="w-full max-w-6xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-teal-200 bg-white">
+      <!-- browser chrome -->
+      <div class="flex items-center gap-2 px-4 py-2.5 bg-teal-50 border-b border-teal-100">
+        <span class="w-3 h-3 rounded-full bg-[#FF5F57]"></span><span class="w-3 h-3 rounded-full bg-[#FEBC2E]"></span><span class="w-3 h-3 rounded-full bg-[#28C840]"></span>
+        <div class="flex-1 mx-3 px-3 py-1 rounded-md bg-white text-xs text-slate-500 font-semibold">app.studentflow.com/dashboard</div>
+      </div>
+
+      <div class="flex" style="height:640px;">
+        <!-- sidebar -->
+        <aside class="w-60 shrink-0 border-r border-teal-100 bg-white p-4 flex flex-col">
+          <div class="flex items-center gap-2 mb-6 px-2">
+            <div class="w-9 h-9 rounded-2xl bg-teal-600 flex items-center justify-center text-black text-lg"><i class="ph-fill ph-graduation-cap"></i></div>
+            <span class="font-extrabold text-slate-800 text-lg">StudentFlow</span>
+          </div>
+          <nav class="space-y-1 text-sm">
+            <a class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-teal-600 text-black font-bold"><i class="ph-fill ph-house"></i> Today</a>
+            <a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 font-semibold hover:bg-teal-50"><i class="ph ph-squares-four"></i> Assignments</a>
+            <a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 font-semibold hover:bg-teal-50"><i class="ph ph-calendar-blank"></i> Calendar</a>
+            <a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 font-semibold hover:bg-teal-50"><i class="ph ph-books"></i> Subjects</a>
+          </nav>
+          <div class="mt-auto flat-card rounded-2xl p-3 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-teal-500 flex items-center justify-center text-black font-bold">M</div>
+            <div class="min-w-0"><p class="text-sm font-bold text-slate-800 truncate">Maya Okafor</p><p class="text-[11px] text-slate-400 font-semibold">10th grade</p></div>
+          </div>
+        </aside>
+
+        <!-- main -->
+        <div class="flex-1 overflow-y-auto scroll" style="background:var(--bg);">
+          <!-- topbar -->
+          <div class="px-6 py-4 flex items-center justify-between border-b border-teal-100 bg-white">
+            <div>
+              <h2 class="text-xl font-extrabold text-slate-800">Good evening, Maya 👋</h2>
+              <p class="text-xs text-slate-500 font-semibold">Tuesday, Oct 28 · 3 things due today</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="hidden md:flex items-center gap-2 px-3 py-2 rounded-xl bg-white border border-teal-200 text-slate-400 text-sm w-56"><i class="ph ph-magnifying-glass"></i> Search…</div>
+              <button class="w-10 h-10 rounded-xl bg-white border border-teal-200 flex items-center justify-center text-slate-600 relative"><i class="ph-fill ph-bell"></i><span class="absolute top-2 right-2.5 w-2 h-2 rounded-full bg-orange-500"></span></button>
+              <button class="h-10 px-4 rounded-xl bg-orange-500 text-black font-bold text-sm flex items-center gap-2"><i class="ph-bold ph-plus"></i> New</button>
+            </div>
+          </div>
+
+          <div class="p-6 grid grid-cols-3 gap-5">
+            <!-- progress -->
+            <div class="col-span-2 rounded-3xl bg-teal-600 text-black p-5">
+              <div class="flex justify-between items-start">
+                <div>
+                  <p class="text-xs font-semibold opacity-80">TODAY'S PROGRESS</p>
+                  <p class="text-3xl font-extrabold mt-1">3 of 5 done</p>
+                  <p class="text-xs font-semibold opacity-80 mt-1">60% — 2 left to finish the day</p>
+                </div>
+                <i class="ph-fill ph-target text-4xl opacity-90"></i>
+              </div>
+              <div class="mt-4 h-3 rounded-full bg-black/20 overflow-hidden"><div class="h-full w-3/5 rounded-full bg-orange-500"></div></div>
+            </div>
+
+            <!-- week mini -->
+            <div class="flat-card rounded-3xl p-4">
+              <p class="text-xs font-bold text-slate-500 mb-3">THIS WEEK</p>
+              <div class="flex justify-between text-center text-[10px] font-bold text-slate-400">
+                <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span>
+              </div>
+              <div class="flex justify-between mt-1.5">
+                <div class="w-8 h-8 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center text-xs font-bold">27</div>
+                <div class="w-8 h-8 rounded-lg bg-teal-600 text-black flex items-center justify-center text-xs font-bold">28</div>
+                <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-500 flex items-center justify-center text-xs font-bold">29</div>
+                <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-500 flex items-center justify-center text-xs font-bold relative">30<span class="absolute -bottom-0.5 w-1 h-1 rounded-full bg-orange-500"></span></div>
+                <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-500 flex items-center justify-center text-xs font-bold relative">31<span class="absolute -bottom-0.5 w-1 h-1 rounded-full bg-amber-500"></span></div>
+              </div>
+              <div class="mt-4 space-y-1.5 text-xs font-bold">
+                <div class="flex items-center gap-2 text-slate-600"><span class="w-1.5 h-4 rounded-full bg-violet-500"></span> Math · 6:00 PM</div>
+                <div class="flex items-center gap-2 text-slate-600"><span class="w-1.5 h-4 rounded-full bg-blue-500"></span> Chem · 11:59 PM</div>
+              </div>
+            </div>
+
+            <!-- due today list -->
+            <div class="col-span-2 flat-card rounded-3xl p-5">
+              <div class="flex justify-between items-center mb-3">
+                <h3 class="font-extrabold text-slate-800">Due today</h3>
+                <span class="text-xs font-bold text-teal-600">See all</span>
+              </div>
+              <div class="divide-y divide-slate-100">
+                <div class="py-3 flex items-center gap-3">
+                  <div class="w-5 h-5 rounded-full border-2 border-slate-300"></div>
+                  <span class="w-1.5 h-8 rounded-full bg-violet-500"></span>
+                  <div class="flex-1 min-w-0"><p class="font-bold text-slate-800 text-sm truncate">Algebra hw — Ch. 7 problems</p><p class="text-xs text-slate-400">Math</p></div>
+                  <span class="text-xs font-bold text-orange-500">6:00 PM</span>
+                  <span class="px-2 py-1 rounded-lg bg-amber-100 text-amber-700 text-[10px] font-bold">HIGH</span>
+                </div>
+                <div class="py-3 flex items-center gap-3">
+                  <div class="w-5 h-5 rounded-full border-2 border-slate-300"></div>
+                  <span class="w-1.5 h-8 rounded-full bg-blue-500"></span>
+                  <div class="flex-1 min-w-0"><p class="font-bold text-slate-800 text-sm truncate">Lab report draft</p><p class="text-xs text-slate-400">Chemistry</p></div>
+                  <span class="text-xs font-bold text-slate-500">11:59 PM</span>
+                  <span class="px-2 py-1 rounded-lg bg-slate-100 text-slate-500 text-[10px] font-bold">MED</span>
+                </div>
+                <div class="py-3 flex items-center gap-3 opacity-70">
+                  <div class="w-5 h-5 rounded-full bg-teal-500 flex items-center justify-center text-black"><i class="ph-bold ph-check text-[10px]"></i></div>
+                  <span class="w-1.5 h-8 rounded-full bg-emerald-500"></span>
+                  <div class="flex-1 min-w-0"><p class="font-bold text-slate-800 text-sm truncate line-through">Review chem notes</p><p class="text-xs text-emerald-600 font-bold">Completed 3:15 PM</p></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- subjects -->
+            <div class="flat-card rounded-3xl p-5">
+              <h3 class="font-extrabold text-slate-800 mb-3">Subjects</h3>
+              <div class="space-y-2.5 text-sm font-bold text-slate-700">
+                <div class="flex items-center gap-3"><span class="w-9 h-9 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center text-lg"><i class="ph-fill ph-function"></i></span> Math <span class="ml-auto text-xs text-orange-500">2 open</span></div>
+                <div class="flex items-center gap-3"><span class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-lg"><i class="ph-fill ph-flask"></i></span> Biology <span class="ml-auto text-xs text-orange-500">1 open</span></div>
+                <div class="flex items-center gap-3"><span class="w-9 h-9 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-lg"><i class="ph-fill ph-scroll"></i></span> History <span class="ml-auto text-xs text-orange-500">1 open</span></div>
+                <div class="flex items-center gap-3"><span class="w-9 h-9 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center text-lg"><i class="ph-fill ph-book-open"></i></span> English <span class="ml-auto text-xs text-red-500">1 overdue</span></div>
+                <div class="flex items-center gap-3"><span class="w-9 h-9 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-lg"><i class="ph-fill ph-atom"></i></span> Chemistry <span class="ml-auto text-xs text-orange-500">1 open</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-center label-chip px-3 py-1 rounded-full bg-white border border-teal-200 text-slate-600 font-semibold w-fit mx-auto mt-4">Web · Dashboard (Primary — Teal / Orange Flat)</p>
+  </main>
+
+  <footer class="text-center text-slate-400 text-xs mt-10 pb-6">
+    StudentFlow · Primary direction · Plus Jakarta Sans · Flat Design · Phosphor Icons
+  </footer>
+</body>
+</html>

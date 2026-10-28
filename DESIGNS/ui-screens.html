@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>StudentFlow — MVP UI Screens</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<style>
+  :root{
+    --primary:#0D9488; --on-primary:#000000;
+    --secondary:#14B8A6; --accent:#EA580C;
+    --bg:#F0FDFA; --fg:#134E4A;
+    --card:#FFFFFF; --muted:#E8F1F4; --muted-fg:#475569;
+    --border:#99F6E4; --destructive:#DC2626;
+  }
+  *{ font-family:'Plus Jakarta Sans', system-ui, sans-serif; }
+  body{ background:
+      radial-gradient(circle at 15% 10%, #ccfbf1 0%, transparent 40%),
+      radial-gradient(circle at 85% 90%, #fed7aa 0%, transparent 45%),
+      #f8fafc;
+  }
+  .phone{ width:320px; height:680px; }
+  .screen{ background:var(--bg); }
+  .scroll::-webkit-scrollbar{ width:0; height:0; }
+  .scroll{ scrollbar-width:none; }
+  .label-chip{ font-size:11px; }
+</style>
+</head>
+<body class="min-h-screen p-8">
+
+  <!-- Header -->
+  <header class="max-w-7xl mx-auto mb-8 text-center">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-teal-600/10 border border-teal-500/20 mb-3">
+      <span class="w-2 h-2 rounded-full bg-teal-500"></span>
+      <span class="text-teal-700 text-xs font-semibold tracking-wide uppercase">MVP Design · Mobile App</span>
+    </div>
+    <h1 class="text-4xl font-extrabold text-slate-800">StudentFlow</h1>
+    <p class="text-slate-500 mt-2 max-w-xl mx-auto">High-school productivity app — core MVP screens. Flat design, teal + orange, Plus Jakarta Sans. Tap-through prototype below.</p>
+  </header>
+
+  <!-- Screens gallery -->
+  <main class="max-w-7xl mx-auto flex flex-wrap gap-10 justify-center items-start">
+
+    <!-- ============ 1. ONBOARDING / LOGIN ============ -->
+    <section class="flex flex-col items-center gap-3">
+      <div class="phone rounded-[42px] bg-slate-900 p-2.5 shadow-2xl">
+        <div class="screen rounded-[34px] h-full overflow-hidden relative flex flex-col">
+          <!-- status bar -->
+          <div class="flex justify-between items-center px-6 pt-3 pb-1 text-slate-800 text-xs font-semibold">
+            <span>9:41</span>
+            <div class="flex gap-1.5 items-center"><i class="ph ph-cell-signal-full"></i><i class="ph ph-wifi-high"></i><i class="ph ph-battery-full"></i></div>
+          </div>
+
+          <div class="flex-1 flex flex-col items-center justify-center px-7 text-center">
+            <div class="w-20 h-20 rounded-3xl bg-teal-500 flex items-center justify-center text-black text-4xl mb-6 shadow-lg">
+              <i class="ph-fill ph-graduation-cap"></i>
+            </div>
+            <h2 class="text-2xl font-extrabold text-slate-800 leading-tight">Stay on top of<br>school.</h2>
+            <p class="text-slate-500 text-sm mt-3 leading-relaxed">Homework, assignments &amp; your day — all in one place.</p>
+
+            <button class="w-full mt-8 py-3.5 rounded-2xl bg-orange-500 text-black font-bold text-sm flex items-center justify-center gap-2 active:scale-95 transition">
+              <i class="ph-fill ph-google-logo text-lg"></i> Continue with Google
+            </button>
+            <button class="w-full mt-3 py-3.5 rounded-2xl bg-teal-600 text-black font-bold text-sm flex items-center justify-center gap-2 active:scale-95 transition">
+              <i class="ph-fill ph-envelope-simple text-lg"></i> Sign up with Email
+            </button>
+            <p class="text-xs text-slate-400 mt-6">Already have an account? <span class="text-teal-600 font-semibold">Log in</span></p>
+          </div>
+
+          <div class="pb-8 flex justify-center"><div class="w-32 h-1.5 rounded-full bg-slate-300"></div></div>
+        </div>
+      </div>
+      <span class="label-chip px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-600 font-semibold">1 · Onboarding</span>
+    </section>
+
+    <!-- ============ 2. TODAY (HOME) ============ -->
+    <section class="flex flex-col items-center gap-3">
+      <div class="phone rounded-[42px] bg-slate-900 p-2.5 shadow-2xl">
+        <div class="screen rounded-[34px] h-full overflow-hidden relative flex flex-col">
+          <div class="flex justify-between items-center px-6 pt-3 pb-1 text-slate-800 text-xs font-semibold">
+            <span>9:41</span>
+            <div class="flex gap-1.5 items-center"><i class="ph ph-cell-signal-full"></i><i class="ph ph-wifi-high"></i><i class="ph ph-battery-full"></i></div>
+          </div>
+
+          <!-- header -->
+          <div class="px-5 pt-3 pb-2 flex justify-between items-center">
+            <div>
+              <p class="text-xs text-slate-500 font-medium">Tuesday, Oct 28</p>
+              <h2 class="text-xl font-extrabold text-slate-800">Hi, Maya 👋</h2>
+            </div>
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-black font-bold">M</div>
+          </div>
+
+          <div class="flex-1 overflow-y-auto scroll px-5 pb-24 space-y-5">
+
+            <!-- progress card -->
+            <div class="rounded-3xl bg-teal-600 text-black p-4">
+              <div class="flex justify-between items-start">
+                <div>
+                  <p class="text-xs font-semibold opacity-80">TODAY'S PROGRESS</p>
+                  <p class="text-2xl font-extrabold mt-1">3 of 5 done</p>
+                </div>
+                <i class="ph-fill ph-target text-3xl opacity-90"></i>
+              </div>
+              <div class="mt-3 h-2.5 rounded-full bg-black/20 overflow-hidden">
+                <div class="h-full w-3/5 rounded-full bg-orange-500"></div>
+              </div>
+            </div>
+
+            <!-- Due today -->
+            <div>
+              <div class="flex justify-between items-center mb-2.5">
+                <h3 class="font-bold text-slate-800">Due today</h3>
+                <span class="text-xs text-teal-600 font-semibold">See all</span>
+              </div>
+              <div class="space-y-2.5">
+
+                <!-- assignment card -->
+                <div class="bg-white rounded-2xl p-3 flex items-center gap-3 border border-slate-100">
+                  <span class="w-1.5 h-11 rounded-full bg-violet-500"></span>
+                  <div class="flex-1 min-w-0">
+                    <p class="font-semibold text-slate-800 text-sm truncate">Algebra hw — Ch. 7 problems</p>
+                    <p class="text-xs text-slate-400 mt-0.5">Math · <span class="text-orange-500 font-semibold">6:00 PM</span></p>
+                  </div>
+                  <span class="px-2 py-1 rounded-lg bg-amber-100 text-amber-700 text-[10px] font-bold">HIGH</span>
+                </div>
+
+                <div class="bg-white rounded-2xl p-3 flex items-center gap-3 border border-slate-100">
+                  <span class="w-1.5 h-11 rounded-full bg-blue-500"></span>
+                  <div class="flex-1 min-w-0">
+                    <p class="font-semibold text-slate-800 text-sm truncate">Lab report draft</p>
+                    <p class="text-xs text-slate-400 mt-0.5">Chemistry · <span class="text-slate-500 font-semibold">11:59 PM</span></p>
+                  </div>
+                  <span class="px-2 py-1 rounded-lg bg-slate-100 text-slate-500 text-[10px] font-bold">MED</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Daily tasks -->
+            <div>
+              <div class="flex justify-between items-center mb-2.5">
+                <h3 class="font-bold text-slate-800">Daily activities</h3>
+                <span class="text-xs text-teal-600 font-semibold">See all</span>
+              </div>
+              <div class="bg-white rounded-2xl divide-y divide-slate-100 border border-slate-100">
+
+                <div class="p-3 flex items-center gap-3">
+                  <div class="w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center text-black"><i class="ph-bold ph-check text-sm"></i></div>
+                  <span class="text-sm text-slate-400 line-through">Review chem notes</span>
+                </div>
+                <div class="p-3 flex items-center gap-3">
+                  <div class="w-6 h-6 rounded-full border-2 border-slate-300"></div>
+                  <span class="text-sm text-slate-700">Gym — 5:30 PM</span>
+                </div>
+                <div class="p-3 flex items-center gap-3">
+                  <div class="w-6 h-6 rounded-full border-2 border-slate-300"></div>
+                  <span class="text-sm text-slate-700">Read History ch. 4</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAB -->
+          <button class="absolute bottom-24 right-5 w-14 h-14 rounded-2xl bg-orange-500 text-black flex items-center justify-center text-2xl shadow-xl active:scale-90 transition">
+            <i class="ph-bold ph-plus"></i>
+          </button>
+
+          <!-- bottom nav -->
+          <div class="absolute bottom-0 inset-x-0 bg-white border-t border-slate-100 px-3 pt-2.5 pb-5 flex justify-around items-center">
+            <div class="flex flex-col items-center text-teal-600"><i class="ph-fill ph-house text-xl"></i><span class="text-[10px] font-semibold mt-0.5">Today</span></div>
+            <div class="flex flex-col items-center text-slate-400"><i class="ph ph-squares-four text-xl"></i><span class="text-[10px] font-medium mt-0.5">Tasks</span></div>
+            <div class="flex flex-col items-center text-slate-400"><i class="ph ph-calendar-blank text-xl"></i><span class="text-[10px] font-medium mt-0.5">Calendar</span></div>
+            <div class="flex flex-col items-center text-slate-400"><i class="ph ph-books text-xl"></i><span class="text-[10px] font-medium mt-0.5">Subjects</span></div>
+          </div>
+        </div>
+      </div>
+      <span class="label-chip px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-600 font-semibold">2 · Today (Home)</span>
+    </section>
+
+    <!-- ============ 3. ASSIGNMENTS ============ -->
+    <section class="flex flex-col items-center gap-3">
+      <div class="phone rounded-[42px] bg-slate-900 p-2.5 shadow-2xl">
+        <div class="screen rounded-[34px] h-full overflow-hidden relative flex flex-col">
+          <div class="flex justify-between items-center px-6 pt-3 pb-1 text-slate-800 text-xs font-semibold">
+            <span>9:41</span>
+            <div class="flex gap-1.5 items-center"><i class="ph ph-cell-signal-full"></i><i class="ph ph-wifi-high"></i><i class="ph ph-battery-full"></i></div>
+          </div>
+
+          <div class="px-5 pt-3 pb-1 flex justify-between items-center">
+            <h2 class="text-xl font-extrabold text-slate-800">Assignments</h2>
+            <div class="flex gap-2">
+              <button class="w-9 h-9 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-600"><i class="ph-bold ph-magnifying-glass"></i></button>
+              <button class="w-9 h-9 rounded-xl bg-teal-600 flex items-center justify-center text-black"><i class="ph-bold ph-funnel"></i></button>
+            </div>
+          </div>
+
+          <!-- segmented tabs -->
+          <div class="px-5 mt-3">
+            <div class="bg-white p-1 rounded-2xl flex border border-slate-100">
+              <div class="flex-1 text-center py-2 rounded-xl bg-teal-600 text-black text-xs font-bold">To-do</div>
+              <div class="flex-1 text-center py-2 text-slate-500 text-xs font-semibold">In progress</div>
+              <div class="flex-1 text-center py-2 text-slate-500 text-xs font-semibold">Done</div>
+            </div>
+          </div>
+
+          <div class="flex-1 overflow-y-auto scroll px-5 pt-4 pb-24 space-y-4">
+
+            <!-- OVERDUE -->
+            <div>
+              <p class="text-[11px] font-bold text-red-500 uppercase tracking-wide mb-2">Overdue</p>
+              <div class="bg-white rounded-2xl p-3 flex items-center gap-3 border border-red-100">
+                <div class="w-6 h-6 rounded-full border-2 border-slate-300 shrink-0"></div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-semibold text-slate-800 text-sm truncate">Essay — The Great Gatsby</p>
+                  <p class="text-xs text-red-500 font-medium mt-0.5">English · Due yesterday</p>
+                </div>
+                <span class="w-1.5 h-11 rounded-full bg-pink-500"></span>
+              </div>
+            </div>
+
+            <!-- TODAY -->
+            <div>
+              <p class="text-[11px] font-bold text-slate-500 uppercase tracking-wide mb-2">Today</p>
+              <div class="space-y-2.5">
+                <div class="bg-white rounded-2xl p-3 flex items-center gap-3 border border-slate-100">
+                  <div class="w-6 h-6 rounded-full border-2 border-slate-300 shrink-0"></div>
+                  <div class="flex-1 min-w-0">
+                    <p class="font-semibold text-slate-800 text-sm truncate">Algebra hw — Ch. 7</p>
+                    <p class="text-xs text-slate-400 mt-0.5">Math · 6:00 PM</p>
+                  </div>
+                  <span class="px-2 py-1 rounded-lg bg-amber-100 text-amber-700 text-[10px] font-bold">HIGH</span>
+                </div>
+                <div class="bg-white rounded-2xl p-3 flex items-center gap-3 border border-slate-100">
+                  <div class="w-6 h-6 rounded-full border-2 border-slate-300 shrink-0"></div>
+                  <div class="flex-1 min-w-0">
+                    <p class="font-semibold text-slate-800 text-sm truncate">Lab report draft</p>
+                    <p class="text-xs text-slate-400 mt-0.5">Chemistry · 11:59 PM</p>
+                  </div>
+                  <span class="px-2 py-1 rounded-lg bg-slate-100 text-slate-500 text-[10px] font-bold">MED</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- THIS WEEK -->
+            <div>
+              <p class="text-[11px] font-bold text-slate-500 uppercase tracking-wide mb-2">This week</p>
+              <div class="space-y-2.5">
+                <div class="bg-white rounded-2xl p-3 flex items-center gap-3 border border-slate-100">
+                  <div class="w-6 h-6 rounded-full border-2 border-slate-300 shrink-0"></div>
+                  <div class="flex-1 min-w-0">
+                    <p class="font-semibold text-slate-800 text-sm truncate">History project — WW2 timeline</p>
+                    <p class="text-xs text-slate-400 mt-0.5">History · Fri</p>
+                  </div>
+                  <span class="w-1.5 h-11 rounded-full bg-amber-500"></span>
+                </div>
+                <div class="bg-white rounded-2xl p-3 flex items-center gap-3 border border-slate-100">
+                  <div class="w-6 h-6 rounded-full border-2 border-slate-300 shrink-0"></div>
+                  <div class="flex-1 min-w-0">
+                    <p class="font-semibold text-slate-800 text-sm truncate">Bio quiz — Cells</p>
+                    <p class="text-xs text-slate-400 mt-0.5">Biology · Fri</p>
+                  </div>
+                  <span class="w-1.5 h-11 rounded-full bg-emerald-500"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="absolute bottom-24 right-5 w-14 h-14 rounded-2xl bg-orange-500 text-black flex items-center justify-center text-2xl shadow-xl active:scale-90 transition">
+            <i class="ph-bold ph-plus"></i>
+          </button>
+
+          <div class="absolute bottom-0 inset-x-0 bg-white border-t border-slate-100 px-3 pt-2.5 pb-5 flex justify-around items-center">
+            <div class="flex flex-col items-center text-slate-400"><i class="ph ph-house text-xl"></i><span class="text-[10px] font-medium mt-0.5">Today</span></div>
+            <div class="flex flex-col items-center text-teal-600"><i class="ph-fill ph-squares-four text-xl"></i><span class="text-[10px] font-semibold mt-0.5">Tasks</span></div>
+            <div class="flex flex-col items-center text-slate-400"><i class="ph ph-calendar-blank text-xl"></i><span class="text-[10px] font-medium mt-0.5">Calendar</span></div>
+            <div class="flex flex-col items-center text-slate-400"><i class="ph ph-books text-xl"></i><span class="text-[10px] font-medium mt-0.5">Subjects</span></div>
+          </div>
+        </div>
+      </div>
+      <span class="label-chip px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-600 font-semibold">3 · Assignments</span>
+    </section>
+
+    <!-- ============ 4. ADD ASSIGNMENT (bottom sheet) ============ -->
+    <section class="flex flex-col items-center gap-3">
+      <div class="phone rounded-[42px] bg-slate-900 p-2.5 shadow-2xl">
+        <div class="screen rounded-[34px] h-full overflow-hidden relative flex flex-col">
+          <!-- dimmed bg -->
+          <div class="absolute inset-0 bg-slate-800/40"></div>
+
+          <div class="flex justify-between items-center px-6 pt-3 pb-1 text-white text-xs font-semibold relative">
+            <span>9:41</span>
+            <div class="flex gap-1.5 items-center"><i class="ph ph-cell-signal-full"></i><i class="ph ph-wifi-high"></i><i class="ph ph-battery-full"></i></div>
+          </div>
+
+          <!-- bottom sheet -->
+          <div class="absolute bottom-0 inset-x-0 bg-white rounded-t-3xl p-5 pb-7">
+            <div class="w-10 h-1.5 rounded-full bg-slate-300 mx-auto mb-4"></div>
+            <h3 class="text-lg font-extrabold text-slate-800 mb-4">New assignment</h3>
+
+            <label class="block text-xs font-bold text-slate-500 mb-1.5">TITLE</label>
+            <div class="w-full px-3.5 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-700 mb-4">Algebra hw — Ch. 7 problems</div>
+
+            <label class="block text-xs font-bold text-slate-500 mb-1.5">SUBJECT</label>
+            <div class="flex gap-2 mb-4 flex-wrap">
+              <span class="px-3 py-1.5 rounded-xl bg-violet-100 text-violet-700 text-xs font-bold border-2 border-violet-500">Math</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-500 text-xs font-semibold">Biology</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-500 text-xs font-semibold">History</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-500 text-xs font-semibold">English</span>
+            </div>
+
+            <div class="flex gap-3 mb-4">
+              <div class="flex-1">
+                <label class="block text-xs font-bold text-slate-500 mb-1.5">DUE DATE</label>
+                <div class="px-3 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-700 flex items-center gap-2"><i class="ph-fill ph-calendar text-teal-600"></i> Oct 28</div>
+              </div>
+              <div class="flex-1">
+                <label class="block text-xs font-bold text-slate-500 mb-1.5">TIME</label>
+                <div class="px-3 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-700 flex items-center gap-2"><i class="ph-fill ph-clock text-teal-600"></i> 6:00 PM</div>
+              </div>
+            </div>
+
+            <label class="block text-xs font-bold text-slate-500 mb-1.5">PRIORITY</label>
+            <div class="flex gap-2 mb-6">
+              <span class="flex-1 text-center py-2.5 rounded-xl bg-slate-100 text-slate-500 text-xs font-semibold">Low</span>
+              <span class="flex-1 text-center py-2.5 rounded-xl bg-slate-100 text-slate-500 text-xs font-semibold">Medium</span>
+              <span class="flex-1 text-center py-2.5 rounded-xl bg-amber-500 text-black text-xs font-bold">High</span>
+            </div>
+
+            <button class="w-full py-3.5 rounded-2xl bg-teal-600 text-black font-bold text-sm active:scale-95 transition">Save assignment</button>
+          </div>
+        </div>
+      </div>
+      <span class="label-chip px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-600 font-semibold">4 · Add Assignment</span>
+    </section>
+
+    <!-- ============ 5. CALENDAR ============ -->
+    <section class="flex flex-col items-center gap-3">
+      <div class="phone rounded-[42px] bg-slate-900 p-2.5 shadow-2xl">
+        <div class="screen rounded-[34px] h-full overflow-hidden relative flex flex-col">
+          <div class="flex justify-between items-center px-6 pt-3 pb-1 text-slate-800 text-xs font-semibold">
+            <span>9:41</span>
+            <div class="flex gap-1.5 items-center"><i class="ph ph-cell-signal-full"></i><i class="ph ph-wifi-high"></i><i class="ph ph-battery-full"></i></div>
+          </div>
+
+          <div class="px-5 pt-3 pb-1 flex justify-between items-center">
+            <h2 class="text-xl font-extrabold text-slate-800">October</h2>
+            <div class="flex gap-2">
+              <button class="w-9 h-9 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-600"><i class="ph-bold ph-caret-left"></i></button>
+              <button class="w-9 h-9 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-600"><i class="ph-bold ph-caret-right"></i></button>
+            </div>
+          </div>
+
+          <!-- week strip -->
+          <div class="px-5 mt-3 flex justify-between">
+            <div class="flex flex-col items-center gap-1.5"><span class="text-[10px] text-slate-400 font-semibold">S</span><div class="w-9 h-9 rounded-xl flex items-center justify-center text-xs font-bold text-slate-500">26</div></div>
+            <div class="flex flex-col items-center gap-1.5"><span class="text-[10px] text-slate-400 font-semibold">M</span><div class="w-9 h-9 rounded-xl flex items-center justify-center text-xs font-bold text-slate-500">27</div></div>
+            <div class="flex flex-col items-center gap-1.5"><span class="text-[10px] text-teal-600 font-bold">T</span><div class="w-9 h-9 rounded-xl bg-teal-600 text-black flex items-center justify-center text-xs font-bold">28</div></div>
+            <div class="flex flex-col items-center gap-1.5"><span class="text-[10px] text-slate-400 font-semibold">W</span><div class="w-9 h-9 rounded-xl flex items-center justify-center text-xs font-bold text-slate-500 relative">29<span class="absolute bottom-1 w-1 h-1 rounded-full bg-orange-500"></span></div></div>
+            <div class="flex flex-col items-center gap-1.5"><span class="text-[10px] text-slate-400 font-semibold">T</span><div class="w-9 h-9 rounded-xl flex items-center justify-center text-xs font-bold text-slate-500">30</div></div>
+            <div class="flex flex-col items-center gap-1.5"><span class="text-[10px] text-slate-400 font-semibold">F</span><div class="w-9 h-9 rounded-xl flex items-center justify-center text-xs font-bold text-slate-500 relative">31<span class="absolute bottom-1 w-1 h-1 rounded-full bg-amber-500"></span></div></div>
+            <div class="flex flex-col items-center gap-1.5"><span class="text-[10px] text-slate-400 font-semibold">S</span><div class="w-9 h-9 rounded-xl flex items-center justify-center text-xs font-bold text-slate-500">1</div></div>
+          </div>
+
+          <div class="flex-1 overflow-y-auto scroll px-5 pt-5 pb-24">
+            <h3 class="font-bold text-slate-800 mb-3">Tuesday, Oct 28</h3>
+            <div class="space-y-3">
+
+              <div class="flex gap-3">
+                <span class="text-[11px] text-slate-400 font-semibold w-12 pt-3 shrink-0">6:00<br>PM</span>
+                <div class="flex-1 bg-white rounded-2xl p-3 border border-slate-100 flex gap-3">
+                  <span class="w-1.5 rounded-full bg-violet-500"></span>
+                  <div>
+                    <p class="font-semibold text-slate-800 text-sm">Algebra hw — Ch. 7</p>
+                    <p class="text-xs text-slate-400 mt-0.5">Math · High priority</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex gap-3">
+                <span class="text-[11px] text-slate-400 font-semibold w-12 pt-3 shrink-0">11:59<br>PM</span>
+                <div class="flex-1 bg-white rounded-2xl p-3 border border-slate-100 flex gap-3">
+                  <span class="w-1.5 rounded-full bg-blue-500"></span>
+                  <div>
+                    <p class="font-semibold text-slate-800 text-sm">Lab report draft</p>
+                    <p class="text-xs text-slate-400 mt-0.5">Chemistry · Medium</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex gap-3 opacity-60">
+                <span class="text-[11px] text-slate-400 font-semibold w-12 pt-3 shrink-0">Done</span>
+                <div class="flex-1 bg-white rounded-2xl p-3 border border-slate-100 flex gap-3">
+                  <span class="w-1.5 rounded-full bg-emerald-500"></span>
+                  <div>
+                    <p class="font-semibold text-slate-800 text-sm line-through">Review chem notes</p>
+                    <p class="text-xs text-emerald-600 mt-0.5">Completed 3:15 PM</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="absolute bottom-0 inset-x-0 bg-white border-t border-slate-100 px-3 pt-2.5 pb-5 flex justify-around items-center">
+            <div class="flex flex-col items-center text-slate-400"><i class="ph ph-house text-xl"></i><span class="text-[10px] font-medium mt-0.5">Today</span></div>
+            <div class="flex flex-col items-center text-slate-400"><i class="ph ph-squares-four text-xl"></i><span class="text-[10px] font-medium mt-0.5">Tasks</span></div>
+            <div class="flex flex-col items-center text-teal-600"><i class="ph-fill ph-calendar-blank text-xl"></i><span class="text-[10px] font-semibold mt-0.5">Calendar</span></div>
+            <div class="flex flex-col items-center text-slate-400"><i class="ph ph-books text-xl"></i><span class="text-[10px] font-medium mt-0.5">Subjects</span></div>
+          </div>
+        </div>
+      </div>
+      <span class="label-chip px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-600 font-semibold">5 · Calendar</span>
+    </section>
+
+    <!-- ============ 6. SUBJECTS ============ -->
+    <section class="flex flex-col items-center gap-3">
+      <div class="phone rounded-[42px] bg-slate-900 p-2.5 shadow-2xl">
+        <div class="screen rounded-[34px] h-full overflow-hidden relative flex flex-col">
+          <div class="flex justify-between items-center px-6 pt-3 pb-1 text-slate-800 text-xs font-semibold">
+            <span>9:41</span>
+            <div class="flex gap-1.5 items-center"><i class="ph ph-cell-signal-full"></i><i class="ph ph-wifi-high"></i><i class="ph ph-battery-full"></i></div>
+          </div>
+
+          <div class="px-5 pt-3 pb-1 flex justify-between items-center">
+            <h2 class="text-xl font-extrabold text-slate-800">Subjects</h2>
+            <button class="w-9 h-9 rounded-xl bg-teal-600 flex items-center justify-center text-black"><i class="ph-bold ph-plus"></i></button>
+          </div>
+
+          <div class="flex-1 overflow-y-auto scroll px-5 pt-4 pb-24 grid grid-cols-2 gap-3 content-start">
+
+            <div class="bg-white rounded-3xl p-4 border border-slate-100">
+              <div class="w-10 h-10 rounded-2xl bg-violet-100 flex items-center justify-center text-violet-600 text-xl mb-3"><i class="ph-fill ph-function"></i></div>
+              <p class="font-bold text-slate-800 text-sm">Math</p>
+              <p class="text-[11px] text-slate-400 mt-0.5">Ms. Rivera</p>
+              <p class="text-xs font-bold text-orange-500 mt-2">2 open</p>
+            </div>
+
+            <div class="bg-white rounded-3xl p-4 border border-slate-100">
+              <div class="w-10 h-10 rounded-2xl bg-emerald-100 flex items-center justify-center text-emerald-600 text-xl mb-3"><i class="ph-fill ph-flask"></i></div>
+              <p class="font-bold text-slate-800 text-sm">Biology</p>
+              <p class="text-[11px] text-slate-400 mt-0.5">Mr. Chen</p>
+              <p class="text-xs font-bold text-orange-500 mt-2">1 open</p>
+            </div>
+
+            <div class="bg-white rounded-3xl p-4 border border-slate-100">
+              <div class="w-10 h-10 rounded-2xl bg-amber-100 flex items-center justify-center text-amber-600 text-xl mb-3"><i class="ph-fill ph-scroll"></i></div>
+              <p class="font-bold text-slate-800 text-sm">History</p>
+              <p class="text-[11px] text-slate-400 mt-0.5">Mrs. Adeyemi</p>
+              <p class="text-xs font-bold text-orange-500 mt-2">1 open</p>
+            </div>
+
+            <div class="bg-white rounded-3xl p-4 border border-slate-100">
+              <div class="w-10 h-10 rounded-2xl bg-pink-100 flex items-center justify-center text-pink-600 text-xl mb-3"><i class="ph-fill ph-book-open"></i></div>
+              <p class="font-bold text-slate-800 text-sm">English</p>
+              <p class="text-[11px] text-slate-400 mt-0.5">Mr. Davis</p>
+              <p class="text-xs font-bold text-red-500 mt-2">1 overdue</p>
+            </div>
+
+            <div class="bg-white rounded-3xl p-4 border border-slate-100">
+              <div class="w-10 h-10 rounded-2xl bg-blue-100 flex items-center justify-center text-blue-600 text-xl mb-3"><i class="ph-fill ph-atom"></i></div>
+              <p class="font-bold text-slate-800 text-sm">Chemistry</p>
+              <p class="text-[11px] text-slate-400 mt-0.5">Ms. Park</p>
+              <p class="text-xs font-bold text-orange-500 mt-2">1 open</p>
+            </div>
+
+            <div class="border-2 border-dashed border-slate-200 rounded-3xl p-4 flex flex-col items-center justify-center text-slate-400">
+              <i class="ph-bold ph-plus text-2xl"></i>
+              <p class="text-xs font-semibold mt-1">Add subject</p>
+            </div>
+          </div>
+
+          <div class="absolute bottom-0 inset-x-0 bg-white border-t border-slate-100 px-3 pt-2.5 pb-5 flex justify-around items-center">
+            <div class="flex flex-col items-center text-slate-400"><i class="ph ph-house text-xl"></i><span class="text-[10px] font-medium mt-0.5">Today</span></div>
+            <div class="flex flex-col items-center text-slate-400"><i class="ph ph-squares-four text-xl"></i><span class="text-[10px] font-medium mt-0.5">Tasks</span></div>
+            <div class="flex flex-col items-center text-slate-400"><i class="ph ph-calendar-blank text-xl"></i><span class="text-[10px] font-medium mt-0.5">Calendar</span></div>
+            <div class="flex flex-col items-center text-teal-600"><i class="ph-fill ph-books text-xl"></i><span class="text-[10px] font-semibold mt-0.5">Subjects</span></div>
+          </div>
+        </div>
+      </div>
+      <span class="label-chip px-3 py-1 rounded-full bg-white border border-slate-200 text-slate-600 font-semibold">6 · Subjects</span>
+    </section>
+
+  </main>
+
+  <!-- Design tokens reference -->
+  <section class="max-w-4xl mx-auto mt-16">
+    <h2 class="text-center text-2xl font-extrabold text-slate-800 mb-6">Design Tokens</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <div class="rounded-2xl overflow-hidden border border-slate-200 bg-white"><div class="h-16 bg-[#0D9488]"></div><div class="p-3"><p class="font-bold text-slate-800 text-sm">Primary</p><p class="text-xs text-slate-400 font-mono">#0D9488</p></div></div>
+      <div class="rounded-2xl overflow-hidden border border-slate-200 bg-white"><div class="h-16 bg-[#EA580C]"></div><div class="p-3"><p class="font-bold text-slate-800 text-sm">CTA / Action</p><p class="text-xs text-slate-400 font-mono">#EA580C</p></div></div>
+      <div class="rounded-2xl overflow-hidden border border-slate-200 bg-white"><div class="h-16 bg-[#F0FDFA] border-b border-slate-100"></div><div class="p-3"><p class="font-bold text-slate-800 text-sm">Background</p><p class="text-xs text-slate-400 font-mono">#F0FDFA</p></div></div>
+      <div class="rounded-2xl overflow-hidden border border-slate-200 bg-white"><div class="h-16 bg-[#134E4A]"></div><div class="p-3"><p class="font-bold text-slate-800 text-sm">Foreground</p><p class="text-xs text-slate-400 font-mono">#134E4A</p></div></div>
+    </div>
+    <p class="text-center text-slate-400 text-xs mt-6">Subject colors (data-coding only): Math violet · Biology emerald · History amber · English pink · Chemistry blue</p>
+  </section>
+
+  <footer class="text-center text-slate-400 text-xs mt-10 pb-6">
+    StudentFlow MVP · Plus Jakarta Sans · Flat Design · Phosphor Icons
+  </footer>
+
+</body>
+</html>
